@@ -6,11 +6,11 @@ THEOS_BUILD_DIR = Packages
 
 include theos/makefiles/common.mk
 
-TWEAK_NAME = FrontCamUnMirror
-FrontCamUnMirror_CFLAGS = -fobjc-arc
-FrontCamUnMirror_FILES = FrontCamUnMirror.xm
-FrontCamUnMirror_FRAMEWORKS = Foundation UIKit CoreGraphics
-FrontCamUnMirror_PRIVATEFRAMEWORKS = PhotoLibrary
+TWEAK_NAME = FrontCamUnMirror8
+FrontCamUnMirror8_CFLAGS = -fobjc-arc
+FrontCamUnMirror8_FILES = FrontCamUnMirror.xm
+FrontCamUnMirror8_FRAMEWORKS = Foundation UIKit CoreGraphics
+FrontCamUnMirror8_PRIVATEFRAMEWORKS = PhotoLibrary
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 

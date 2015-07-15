@@ -41,7 +41,7 @@
 
 // globals (file-scope)
 static UIButton *mirrorButton = nil;
-static PLCameraView *cameraView = nil;
+static CAMCameraView *cameraView = nil;
 
 
 
@@ -50,7 +50,7 @@ static PLCameraView *cameraView = nil;
 //--------------------------------------------------------------------------------------------------
 // New Class Members
 //--------------------------------------------------------------------------------------------------
-@interface PLCameraView (FCUM)
+@interface CAMCameraView (FCUM)
 - (void)handleMirrorButtonTap;
 - (void)mirrorPreview;
 @end
@@ -121,7 +121,7 @@ static PLCameraView *cameraView = nil;
 
 
 //--------------------------------------------------------------------------------------------------
-%hook PLCameraView
+%hook CAMCameraView
 //--------------------------------------------------------------------------------------------------
 
 - (id)initWithFrame:(CGRect)arg1 spec:(id)arg2 {
@@ -180,7 +180,7 @@ static PLCameraView *cameraView = nil;
 	DebugLog(@"Flipping Preview.................");
 	
 	// this is current preview transformation
-	CGAffineTransform currentTransform = MSHookIvar<CGAffineTransform>(self, "_previewTransform");
+	CGAffineTransform currentTransform = MSHookIvar<CGAffineTransform>(self, "_previewViewTransform");
 	DebugLog(@"current transformation = %@", NSStringFromCGAffineTransform(currentTransform));
 	
 	// apply the mirror-h transform to the current transform

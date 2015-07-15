@@ -55,27 +55,12 @@
 
 //--------------------------------------------------------------------------------------------------
 
-@interface PLCameraView : UIView
+@interface CAMCameraView : UIView
 {
     struct CGAffineTransform _previewTransform;
 }
 @property(readonly, nonatomic) CAMTopBar *_topBar; // @synthesize _topBar=__topBar;
-@property(readonly, nonatomic) BOOL _switchingBetweenCameras;
-- (void)cameraControllerSessionDidStart:(id)arg1;
-- (void)cameraControllerPreviewDidStart:(id)arg1;
-- (void)cameraControllerModeDidChange:(id)arg1;
-- (void)cameraController:(id)arg1 willChangeToMode:(long long)arg2 device:(long long)arg3;
-- (void)_createTopBarIfNecessary;
-- (void)setPreviewViewTransform:(struct CGAffineTransform)arg1;
-- (void)_updateTopBarOrientationWithDeviceOrientation:(long long)arg1;
-- (void)_layoutTopBarForOrientation:(long long)arg1;
-- (void)_updateTopBarStyleForDeviceOrientation:(long long)arg1;
-- (void)_flipToBlurredPreviewWithCompletionBlock:(id)arg1;
-- (BOOL)_shouldHideHDRButtonForMode:(long long)arg1;
-- (void)_showControlsForChangeToMode:(long long)arg1 animated:(BOOL)arg2;
-- (void)_hideControlsForChangeToMode:(long long)arg1 animated:(BOOL)arg2;
-- (BOOL)_shouldEnableHDRButton;
-- (void)_updateEnabledControlsWithReason:(id)arg1;
+@property(nonatomic) struct CGAffineTransform previewViewTransform; // @synthesize previewViewTransform=_previewViewTransform;
 @end
 
 //--------------------------------------------------------------------------------------------------
